@@ -1,17 +1,17 @@
 INSERT INTO department 
   (name)
 VALUES
-  ('sales'),
-  ('marketing'),
+  ('Sales'),
+  ('Marketing'),
   ('IT');
 
 INSERT INTO role 
   (title, salary, department_id)
 VALUES
 ('Sales manager', 170000.00, 1),
-('sales rep', 100000.00, 1),
+('Sales rep', 100000.00, 1),
 ('Marketing manager', 170000.00, 2),
-('copy writer', 70000.00, 2),
+('Copy writer', 70000.00, 2),
 ('IT Manager', 170000.00, 3),
 ('Systems Admin', 135000.00, 3);
 
