@@ -15,7 +15,7 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Languages](#languages)
-  * [Future Development](#future development)
+  * [Future](#future)
   * [Questions](#questions)
   * [Credits](#credits)
   * [License](#license)
