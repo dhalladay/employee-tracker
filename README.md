@@ -14,9 +14,10 @@
 
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
-  * [Testing](#testing)
+  * [Languages](#languages)
+  * [Future Development](#future development)
   * [Questions](#questions)
+  * [Credits](#credits)
   * [License](#license)
 
   ## Installation
@@ -32,7 +33,7 @@
 
   The following [video](https://www.youtube.com/watch?v=m5-6aKaCxHY) gives a walkthrough of the Employee Tracker CMS
 
-  ## Languages and packages
+  ## Languages
 
   * Javascript
   * Node
