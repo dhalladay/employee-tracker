@@ -2,11 +2,13 @@ const inquirer = require('inquirer');
 // const mysql = require('mysql2');
 const db = require('./db/connection');
 
+//connect to db using mysql
 db.connect((err) => {
   if (err) throw err;
   newPrompt();
 })
 
+//main menu questions as well as navigation based on choices
 const newPrompt = async () => {
   const { action } = await inquirer.prompt([
     {
@@ -28,13 +30,14 @@ const newPrompt = async () => {
   ])
   switch (action) {
     case 'View all departments':
+      //query for everything from deptartment table
       const deptQuery = `SELECT * FROM department ORDER BY id`;
       const depts = await db.promise().query(deptQuery)
       console.table(depts[0]);
       newPrompt();
       break;
-    //refactor to async/await from here down
     case 'View all roles':
+      //pull id and title from role table, join to dept table to get dept name
       const roleQuery = `
       SELECT
         role.id,
@@ -50,6 +53,8 @@ const newPrompt = async () => {
       newPrompt();
       break;
     case 'View all employees':
+      //three joins, one to role table to get the employee's title and salary, one to dept table to get their dept name
+      //and the final join to the same employee table to get the name of the employee's manager
       const employeeQuery = `
       SELECT
         employee.id AS 'Employee ID',
@@ -85,6 +90,7 @@ const newPrompt = async () => {
       updateRole();
       break;
     case 'Exit':
+      //end connection
       db.end();
       break;
   }
@@ -241,7 +247,6 @@ const updateRole = async () => {
       choices: roleList
     }
   ])
-  // const reversedData = { role_id: userData.role_id, id: userData.id };
   const updatedTitle = await db.promise().query(`UPDATE employee SET role_id = ${userData.role_id} WHERE id = ${userData.id}`);
   newPrompt();
 };
