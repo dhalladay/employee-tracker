@@ -4,7 +4,7 @@
 
   A simple CMS application which can be used by a company to manage their departments, roles and employees.
 
- ![Screenshot of the application](./assets/images/Screenshot.png)
+ ![Screenshot of the application](/assets/images/Screenshot.png)
   
   ## Description
 
