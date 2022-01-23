@@ -12,7 +12,7 @@ const newPrompt = async () => {
     {
       type: 'list',
       name: 'action',
-      message: 'What would you like to do?',
+      message: 'Select one of the following options:',
       choices:
         [
           'View all departments',
@@ -42,7 +42,8 @@ const newPrompt = async () => {
         department.name as Department
       FROM role
       LEFT JOIN department 
-      ON department_id = department.id;
+      ON department_id = department.id
+      ORDER BY Department;
       `;
       const roles = await db.promise().query(roleQuery)
       console.table(roles[0]);
@@ -57,14 +58,15 @@ const newPrompt = async () => {
         role.title as Title,
         department.name as Department,
         role.salary as Salary,
-        CONCAT(manager.first_name, ' ', manager.last_name) as Manager
+        CONCAT(m.first_name, ' ', m.last_name) as Manager
       FROM employee
       LEFT JOIN role
       ON role_id = role.id
       LEFT JOIN department
       ON role.department_id = department.id
-      LEFT JOIN employee AS manager
-      on employee.manager_id = manager.id
+      LEFT JOIN employee AS m
+      ON employee.manager_id = m.id
+      ORDER BY employee.last_name;
       `;
       const employeeList = await db.promise().query(employeeQuery)
       console.table(employeeList[0]);
@@ -161,10 +163,11 @@ const addDepartment = async () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the name of Department?'
+      message: 'What is the name of Department?',
+      //add validation
+      validate: 
     }
   ])
   const newDept = await db.promise().query('INSERT INTO department set ?', userData);
-  // promptUser();
   newPrompt();
 };
