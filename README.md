@@ -1,10 +1,10 @@
 # Employee Tracker (CMS)
 
-![Github License](https://img.shields.io/badge/license-MIT-green.svg)
+ ![Github License](https://img.shields.io/badge/license-MIT-green.svg)
 
   A simple CMS application which can be used by a company to manage their departments, roles and employees.
 
-![Screenshot of the application](./assets/images/Screenshot.png)
+ ![Screenshot of the application](./assets/images/Screenshot.png)
   
   ## Description
 
