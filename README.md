@@ -40,7 +40,7 @@
   * Inquirer
   * mysql2
 
-  ## Future Development
+  ## Future
 
   * Delete functionality
   * Explanded ability to update employee/role information
