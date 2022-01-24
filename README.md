@@ -8,8 +8,6 @@
 
   Created a simple database of three tables, departments, roles and employees to help a company keep track of their employees and the employee's job related information. This application was built using node, induirer and mysql2.
 
-![Screenshot of application](./assets/images/Screenshot.png?raw=true)
-
   ## Table of Contents
 
   * [Installation](#installation)
