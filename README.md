@@ -24,6 +24,7 @@
   2. Clone code from [github](https://github.com/dhalladay/employee-tracker)
   3. Install required packages in terminal type 'npm init' press enter until the npm begins to install
   4. Again in the terminal type 'npm install inquirer mysql2' and press enter again and wait for installation to be complete
+  5. To create and seed the database, log into the mysql command prompt and run the db.sql, schema.sql and seeds.sql in that order.
 
   ## Usage
 
